@@ -7,12 +7,13 @@ import Nav from './components/Nav';
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const [userName, setUsername] = useState(localStorage.getItem("userName"));
+  const [userId, setUserId] = useState(localStorage.getItem("userId"));
+  const [token, setToken] = useState(localStorage.getItem("token"));
   return (
     <>
-      <Nav/>
-      <Outlet />
+      <Nav setUserId={setUserId} setUsername={setUsername} setToken={setToken} token={token} userId={userId} userName={userName}/>
+      <Outlet context={{ token, userId, userName, setToken, setUserId, setUsername }}/>
     </>
   )
 }

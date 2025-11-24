@@ -1,0 +1,86 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+input {
+    background-color: white;
+    color: #000;
+}
+
+label {
+    text-align: left;
+    padding-left: 1px;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 24px;             /* more inner space */
+  border-radius: 12px;
+  width: 420px;              /* wider modal */
+  max-width: 92vw;           /* responsive cap */
+  box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+  box-sizing: border-box;    /* padding included in width */
+}
+
+.errorMessageModal {
+  color: #fff;
+  background: #e74c3c;
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+  line-height: 1.2;
+}
+
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;                 /* consistent spacing between fields */
+}
+
+.modal-content form input {
+  width: 100%;
+  padding: 12px 14px;        /* extra right padding */
+  border: 1px solid #d0d7de;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;    /* prevents overflow to the right */
+}
+
+.modal-content form input:focus {
+  border-color: #0078d7;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0,120,215,0.15);
+}
+
+.modal-content form button {
+  width: 100%;
+  padding: 12px 14px;
+  background: #0078d7;
+  color: #fff;
+  border: 0;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.modal-content form button:hover {
+  background: #005fa3;
+}
+
+/* Optional: tighter mobile layout */
+@media (max-width: 420px) {
+  .modal-content {
+    width: 94vw;
+    padding: 20px;
+    border-radius: 10px;
+  }
+}
+

@@ -1,6 +1,6 @@
 import App from './App';
 import Home from './pages/Home';
-// import Signup from './pages/Signup';
+import Signup from './pages/Signup';
 // import CreateBlog from './pages/CreateBlog';
 // import AddPost from './pages/AddPost';
 // import EditPost from './pages/EditPost';
@@ -16,7 +16,8 @@ path: '/',
 element: <App />,
 children: [
 { path: '', element: <Home /> },
-// { path: 'signup', element: <Signup /> },
+{ path: 'home', element: <Home /> },
+{ path: 'signup', element: <Signup /> },
 // { path: 'createblog/:id', element: <CreateBlog /> },
 // { path: 'addpost/:id', element: <AddPost />},
 // { path: 'editpost/:id', element: <EditPost />},

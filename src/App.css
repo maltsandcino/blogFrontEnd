@@ -19,12 +19,11 @@
   }
 
   .full-width-flex-row {
-    flex-direction: row;          /* nav items side by side */
+    flex-direction: column;          /* nav items side by side */
     min-width: 100vw;                  /* stretch across top */
     height: auto;                 /* shrink height */
     box-shadow: 0px 1px 1px #aaaaaa;
     padding-left: 11px;
-    padding-top: 0px;
     margin-top: -2px; /* shadow at bottom instead of side */
   }
 }
