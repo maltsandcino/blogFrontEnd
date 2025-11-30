@@ -1,0 +1,131 @@
+.post-card {
+  background: #ffffff;
+  border-radius: 6px;                 /* slightly smaller radius */
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08); /* lighter shadow */
+  padding: 1rem;                      /* reduced padding */
+  margin-bottom: 1rem;                /* tighter spacing */
+  font-family: system-ui, sans-serif;
+}
+
+.post-title {
+  margin: 0 0 0.4rem;
+  font-size: 1.1rem;                  /* smaller title */
+  color: #333;
+}
+
+.post-content {
+  margin: 0 0 0.75rem;
+  line-height: 1.4;
+  color: #444;
+  font-size: 0.95rem;                 /* slightly smaller text */
+}
+
+.post-meta {
+  font-size: 0.8rem;                  /* smaller meta */
+  color: #666;
+  margin-bottom: 0.75rem;
+}
+
+.comments {
+  margin-top: 0.75rem;
+}
+
+.comments h4 {
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;                  /* smaller heading */
+  color: #333;
+  text-align: left;
+}
+
+.comment {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;                       /* tighter gap */
+  padding: 0.5rem 0;                  /* smaller vertical padding */
+  border-bottom: 1px solid #eee;
+  font-size: 0.85rem;                 /* smaller comment text */
+}
+
+.comment strong {
+  color: #0078d4;
+}
+
+.comment-meta {
+  flex: 0 0 120px;                    /* narrower meta column */
+  font-size: 0.75rem;
+  color: #666;
+}
+
+.comment-title {
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+  color: #333;
+}
+
+.comment-author {
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+}
+
+.comment-date {
+  font-size: 0.7rem;
+  color: #999;
+}
+
+.comment-content {
+  flex: 1;
+  font-size: 0.85rem;                 /* smaller content text */
+  color: #444;
+  line-height: 1.3;
+  text-align: left;
+}
+
+.comment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;                        /* tighter spacing */
+  margin-top: 0.5rem;
+}
+
+.comment-form input {
+  flex: 1;
+  padding: 0.35rem 0.5rem;            /* smaller input padding */
+  border: 1px solid #ccc;
+  border-radius: 4px;                 /* smaller radius */
+  font-size: 0.85rem;
+}
+
+.comment-form button {
+  padding: 0.4rem 0.75rem;            /* smaller button */
+  background: #0078d4;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.comment-form button:hover:not(:disabled) {
+  background: #005a9e;
+}
+
+.comment-form button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #d32f2f;
+  font-size: 0.8rem;                  /* smaller error text */
+  margin-top: 0.4rem;
+}
+
+.comments h4 {
+    color: lightgrey;
+    transition: all 1s ease-in-out;
+}
+.comments h4:hover {
+    color: black;
+    cursor: pointer;
+}

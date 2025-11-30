@@ -1,0 +1,18 @@
+.blog-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    background: #f9fafb;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+textarea {
+    background-color: white;
+    color: black;
+}
+
+#private {
+    background-color: white !important;
+}

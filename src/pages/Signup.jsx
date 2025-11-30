@@ -21,6 +21,7 @@ function Signup() {
     const handleSignup = async (e) => {
         e.preventDefault();
         // send new user details:
+        console.log(apiUrl)
         try {
                 const res = await axios.post(`${apiUrl}/user`, {
                     email,

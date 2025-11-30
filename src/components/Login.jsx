@@ -1,16 +1,15 @@
   import { useState, useEffect } from "react";
-  const apiUrl = import.meta.env.VITE_API_BASE;
   import axios from "axios"
   import "./Login.css"
+  import { useNavigate } from "react-router-dom";
  
   
-  
-
 function Login({ setShowLogin, setToken, setUsername, setUserId }) {
 const [errorMessage, setErrorMessage] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const apiUrl = import.meta.env.VITE_API_BASE;
+  const navigate = useNavigate();
 
   const handleLogin = async (e) => {
   e.preventDefault();
@@ -28,6 +27,7 @@ const [errorMessage, setErrorMessage] = useState("");
       setUserId(res.data.user.id)
       setShowLogin(false)
       setErrorMessage()
+      navigate("/home")
         } catch (err) {
             if (err.response) {
                 // Server responded with a status code outside 2xx

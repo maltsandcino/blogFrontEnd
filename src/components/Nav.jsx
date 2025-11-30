@@ -48,6 +48,17 @@ function Nav({setUsername, setUserId, setToken, token, userId, userName}) {
       >
         Home
       </NavLink>
+      {token && (
+  <NavLink
+    key="Blog"
+    to="/Blog"
+    onClick={() => setOpen(false)}
+    className={({ isActive }) => `pageLink ${isActive ? "active" : ""} navLink`}
+    viewTransition
+  >
+    My Blog
+  </NavLink>
+)}
       {!token ? (
       <a onClick={() => setShowLogin(true)} className="login-trigger pageLink navLink">
         Login
