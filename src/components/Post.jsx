@@ -42,15 +42,17 @@ export default function Post({ post, token, apiUrl }) {
   return (
     <div className="post-card">
       <h3 className="post-title">{post.title}</h3>
-      <p className="post-content">{post.content}</p>
-      <div className="post-meta">
+        <div className="post-meta">
         <span>By {post.user?.username || "Anonymous"}</span>
         <span> • {new Date(post.created).toLocaleDateString()}</span>
       </div>
+      <p className="post-content">{post.content}</p>
+    
 
   
       <div className="comments">
         <h4 onClick={() => setViewComments(prev => !prev)}>Click to view comments...</h4>
+        <div className={`comments-content ${viewComments ? "open" : ""}`}>
         {viewComments && (
             <>{comments.length > 0 ? (
           comments.map((c) => (
@@ -70,10 +72,35 @@ export default function Post({ post, token, apiUrl }) {
           ))
         ) : (
           <p>No comments yet.</p>
-        )}</>)}
-        
+        )}
+        {token && (
+  <>
+    <form onSubmit={handleSubmit} className="comment-form">
+    <div className="flex-row">
+      <input
+        type="text"
+        className="flex-grow-one"
+        placeholder="Title your message..."
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
+      /><input
+        type="text"
+        className="flex-grow-two"
+        placeholder="Write a comment..."
+        value={newComment}
+        onChange={(e) => setNewComment(e.target.value)}
+      />
       </div>
-      
+      <button type="submit" disabled={!canSubmit}>
+        {loading ? "Posting..." : "Add Comment"}
+      </button>
+    </form>
+    {error && <p className="error">{error}</p>}
+  </>
+)}
+        </>)}
+        </div>
+      </div>
       
  </div>
   );

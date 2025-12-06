@@ -2,6 +2,7 @@ import App from './App';
 import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Blog from './pages/Blog';
+import SpecificBlog from './pages/SpecificBlog'
 // import CreateBlog from './pages/CreateBlog';
 // import AddPost from './pages/AddPost';
 // import EditPost from './pages/EditPost';
@@ -20,6 +21,7 @@ children: [
 { path: 'home', element: <Home /> },
 { path: 'signup', element: <Signup /> },
 { path: 'blog', element: <Blog /> },
+{ path: 'blogs/:id', element: <SpecificBlog />}
 // { path: 'createblog/:id', element: <CreateBlog /> },
 // { path: 'addpost/:id', element: <AddPost />},
 // { path: 'editpost/:id', element: <EditPost />},

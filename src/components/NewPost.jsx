@@ -10,8 +10,6 @@ export default function NewPost({ apiUrl, token, blogId, onPostCreated }) {
   const [error, setError] = useState("");
 
   const canSubmit = title.trim() && content.trim() && !loading;
-  const navigate = Navigate()
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!canSubmit) return;
@@ -31,8 +29,6 @@ export default function NewPost({ apiUrl, token, blogId, onPostCreated }) {
 
 
       if (onPostCreated) onPostCreated(res.data);
-
-
       // Reset form
       setTitle("");
       setContent("");

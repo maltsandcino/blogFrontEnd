@@ -6,7 +6,7 @@ import Post from './Post';
 export default function BlogView({ blog, apiUrl,                
   token, setBlog
 }){
-
+    const userId = localStorage.getItem("userId");
     return(<>
     <h2>{blog.title}</h2>
     <div className='blogDescription'>
@@ -14,11 +14,12 @@ export default function BlogView({ blog, apiUrl,
     </div>
     <br></br>
     <div className='by-line'>Blog by {blog.owner.username}</div>
+    { blog.owner.id == userId && (
     <div className='new-entry'>
         <NewPost apiUrl={apiUrl} token={token} blogId={blog.id}   onPostCreated={(newPost) => {
     setBlog({ ...blog, posts: [newPost, ...blog.posts] });
   }}/>
-    </div>
+    </div>) }
     <div className="posts">
         {blog.posts && blog.posts.length > 0 ? (
           blog.posts.map((post) => (

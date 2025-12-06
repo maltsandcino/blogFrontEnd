@@ -1,5 +1,5 @@
 import { useContext, useState, useEffect } from 'react';
-import { useOutletContext } from 'react-router-dom';
+import { useOutletContext, Link } from 'react-router-dom';
 import axios from 'axios';
 import "./Home.css";
 import Post from '../components/Post';
@@ -33,12 +33,10 @@ function Home() {
       <div className="home-content">
         <h2 className="welcome">
         Latest Blogs...
-        </h2>
-        
-          
+        </h2>          
         <div className="blogHolder">
           {blogs.map((blog) => ( <div key={blog.id}>
-    <h3>{blog.title}</h3>
+    <Link key={blog.title} to={`/blogs/${blog.id}`} viewTransition > <h3 className="blog-title-home">{blog.title}</h3></Link>
     {blog.posts && blog.posts.length > 0 && (
       <Post post={blog.posts[0]} apiUrl={apiUrl} token={token} />
     )}

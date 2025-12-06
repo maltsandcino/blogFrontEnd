@@ -1,49 +1,63 @@
 .post-card {
   background: #ffffff;
-  border-radius: 6px;                 /* slightly smaller radius */
-  box-shadow: 0 1px 4px rgba(0,0,0,0.08); /* lighter shadow */
-  padding: 1rem;                      /* reduced padding */
-  margin-bottom: 1rem;                /* tighter spacing */
+  border-radius: 8px;                 
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08); 
+  padding: 1.25rem;                      
+  margin-bottom: 1.25rem;                
   font-family: system-ui, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; /* align children to full width */
 }
 
 .post-title {
-  margin: 0 0 0.4rem;
-  font-size: 1.1rem;                  /* smaller title */
-  color: #333;
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;                  
+  font-weight: 600;
+  color: #222;
 }
 
 .post-content {
-  margin: 0 0 0.75rem;
-  line-height: 1.4;
+  margin: 0 0 1rem;
+  line-height: 1.6;
   color: #444;
-  font-size: 0.95rem;                 /* slightly smaller text */
+  font-size: 0.95rem;
+  text-align: left;
+  text-indent: 1em;
+  width: 100%;
 }
 
 .post-meta {
-  font-size: 0.8rem;                  /* smaller meta */
+  font-size: 0.85rem;                  
   color: #666;
   margin-bottom: 0.75rem;
 }
 
 .comments {
-  margin-top: 0.75rem;
+  margin-top: 1rem;
+  width: 100%;
 }
 
 .comments h4 {
-  margin-bottom: 0.4rem;
-  font-size: 0.9rem;                  /* smaller heading */
-  color: #333;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;                  
+  font-weight: 500;
+  color: #555;
   text-align: left;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+.comments h4:hover {
+  color: #000;
 }
 
 .comment {
   display: flex;
   align-items: flex-start;
-  gap: 0.75rem;                       /* tighter gap */
-  padding: 0.5rem 0;                  /* smaller vertical padding */
+  gap: 1rem;                       
+  padding: 0.75rem 0;                  
   border-bottom: 1px solid #eee;
-  font-size: 0.85rem;                 /* smaller comment text */
+  font-size: 0.9rem;                 
 }
 
 .comment strong {
@@ -51,20 +65,20 @@
 }
 
 .comment-meta {
-  flex: 0 0 120px;                    /* narrower meta column */
+  flex: 0 0 100px;                    
   font-size: 0.75rem;
   color: #666;
 }
 
 .comment-title {
   font-weight: 600;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.25rem;
   color: #333;
 }
 
 .comment-author {
   font-weight: 500;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.25rem;
 }
 
 .comment-date {
@@ -74,34 +88,52 @@
 
 .comment-content {
   flex: 1;
-  font-size: 0.85rem;                 /* smaller content text */
+  font-size: 0.9rem;                 
   color: #444;
-  line-height: 1.3;
+  line-height: 1.4;
   text-align: left;
 }
 
 .comment-form {
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;                        /* tighter spacing */
-  margin-top: 0.5rem;
+  gap: 0.6rem;                        
+  margin-top: 0.75rem;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  width: 100%;
+}
+
+.flex-grow-one {
+  flex: 0 0 25%; /* title field smaller */
+  min-width: 120px;
+}
+
+.flex-grow-two {
+  flex: 1; /* comment field takes remaining space */
 }
 
 .comment-form input {
-  flex: 1;
-  padding: 0.35rem 0.5rem;            /* smaller input padding */
+  width: 100%;
+  padding: 0.45rem 0.6rem;            
   border: 1px solid #ccc;
-  border-radius: 4px;                 /* smaller radius */
+  border-radius: 4px;                 
   font-size: 0.85rem;
 }
 
 .comment-form button {
-  padding: 0.4rem 0.75rem;            /* smaller button */
+  align-self: flex-end;
+  padding: 0.45rem 1rem;            
   background: #0078d4;
   color: #fff;
   border: none;
   border-radius: 4px;
   font-size: 0.85rem;
+  font-weight: 500;
   cursor: pointer;
   transition: background 0.2s ease;
 }
@@ -117,15 +149,18 @@
 
 .error {
   color: #d32f2f;
-  font-size: 0.8rem;                  /* smaller error text */
+  font-size: 0.85rem;                  
   margin-top: 0.4rem;
 }
 
-.comments h4 {
-    color: lightgrey;
-    transition: all 1s ease-in-out;
+.comments-content {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 1s ease-in-out, opacity 1s ease-in-out;
 }
-.comments h4:hover {
-    color: black;
-    cursor: pointer;
+
+.comments-content.open {
+  max-height: 1000px; /* large enough to fit content */
+  opacity: 1;
 }
