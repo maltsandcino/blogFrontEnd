@@ -37,7 +37,7 @@ useEffect(() => {
 
 return(<>
 <div className="blog-content">
-{blog ? (<BlogView apiUrl={apiUrl} blog={blog} token={token} setBlog={setBlog}/>) : (<div>Loading...</div>) }
+{blog ? (<BlogView apiUrl={apiUrl} blog={blog} token={token} setBlog={setBlog}/>) : (<div className="loading">Loading</div>) }
 </div>
 </>)
 

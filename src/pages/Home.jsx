@@ -36,7 +36,8 @@ function Home() {
         </h2>          
         <div className="blogHolder">
           {blogs.map((blog) => ( <div key={blog.id}>
-    <Link key={blog.title} to={`/blogs/${blog.id}`} viewTransition > <h3 className="blog-title-home">{blog.title}</h3></Link>
+    {token ? (<Link key={blog.title} to={`/blogs/${blog.id}`} viewTransition > <h3 className="blog-title-home">{blog.title}</h3></Link>) : (<h3 className="blog-title-home">{blog.title}</h3>)}        
+    
     {blog.posts && blog.posts.length > 0 && (
       <Post post={blog.posts[0]} apiUrl={apiUrl} token={token} />
     )}

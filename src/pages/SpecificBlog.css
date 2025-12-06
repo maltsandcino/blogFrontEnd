@@ -1,0 +1,20 @@
+.loading {
+  font-family: system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #000000;              /* brand-like blue */
+  text-align: center;
+  margin: 1rem 0;
+  position: relative;
+  animation: pulse 0.8s infinite alternate;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(0.8);
+    opacity: 0.6;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }}

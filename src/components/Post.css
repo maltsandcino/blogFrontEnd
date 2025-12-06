@@ -25,6 +25,8 @@
   text-align: left;
   text-indent: 1em;
   width: 100%;
+  background-color: rgb(252, 252, 252);
+  border-bottom: 1px dotted #00000011
 }
 
 .post-meta {
@@ -34,15 +36,15 @@
 }
 
 .comments {
-  margin-top: 1rem;
+  
   width: 100%;
 }
 
 .comments h4 {
   margin-bottom: 0.5rem;
-  font-size: 0.95rem;                  
+  font-size: 0.75rem;                  
   font-weight: 500;
-  color: #555;
+  color: #d1d0d0;
   text-align: left;
   cursor: pointer;
   transition: color 0.3s ease;
