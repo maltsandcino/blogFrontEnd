@@ -17,7 +17,7 @@ export default function BlogView({ blog, apiUrl,
     { blog.owner.id == userId && (
     <div className='new-entry'>
         <NewPost apiUrl={apiUrl} token={token} blogId={blog.id}   onPostCreated={(newPost) => {
-    setBlog({ ...blog, posts: [newPost, ...blog.posts] });
+    setBlog({ ...blog, posts: [newPost, ...(blog.posts || [])] });
   }}/>
     </div>) }
     <div className="posts">
